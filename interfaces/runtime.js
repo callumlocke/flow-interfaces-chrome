@@ -37,7 +37,11 @@ type chrome$runtime = {
   id: string,
   lastError: {message?: string},
 
-  connect(extensionId?: string, connectInfo?: {
+  connect(extensionId: string, connectInfo?: {
+    includeTlsChannelId?: boolean,
+    name?: string
+  }): chrome$Port,
+  connect(connectInfo?: {
     includeTlsChannelId?: boolean,
     name?: string
   }): chrome$Port,
